@@ -1,8 +1,8 @@
 """This is a simple program to add the two given numbers"""
 
-first_value = int(input("Enter a number to add: "))
+first_value = int(10)
 
-second_value = int(input("Enter another number to add with {0}: ".format(first_value)))
+second_value = int(5)
 
 addition = first_value + second_value
 
