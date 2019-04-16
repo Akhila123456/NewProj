@@ -23,8 +23,8 @@ pipeline{
    { 
     steps{
      echo "Building docker image"
-     docker -v       
-     docker build -t aa     
+     //docker -v       
+     docker.build     
     }   
     } 
    }
