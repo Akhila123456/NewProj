@@ -6,7 +6,7 @@ pipeline{
      agent {
           dockerfile true
      }
-     stage(SCM Checkout)
+     stage("SCM Checkout")
      {
          echo "Checking out code"
          checkout scm
