@@ -23,8 +23,10 @@ pipeline{
    { 
     steps{
      echo "Building docker image"
-     //docker -v       
-     docker.build "NewProj"      
+     //docker -v  
+         script{    
+              def app= docker.build "NewProj"   
+         }
     }  
     } 
    }
