@@ -2,10 +2,10 @@ GitCredentials='Gitcred'
 ExcludedGitTags=['Latest','Development','QA','Production']
 def CommitHash
 def BranchName
-pipeline{
+/*pipeline{
      agent {
           dockerfile true
-     }
+     }*/
      stage("SCM Checkout")
      {
          echo "Checking out code"
@@ -22,4 +22,4 @@ pipeline{
      docker build -t aa     
         
     }   
-  }
+  
