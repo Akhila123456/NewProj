@@ -25,8 +25,8 @@ stage("Build Image")
   {
             
      echo "Building docker image"
-            
-     docker build  -< Dockerfile"
+     docker -v       
+     docker build  -< Dockerfile
      
   }   
      
