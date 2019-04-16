@@ -25,7 +25,7 @@ pipeline{
      //docker -v  
  
     sh "sudo docker build -t  testing ."
- echo "its done"
+    echo "its done"
                 
          
     }  
