@@ -10,19 +10,22 @@ pipeline{
      stages{
      stage("SCM Checkout")
      {
+       steps{
          echo "Checking out code"
          checkout scm
          echo "Getting git commit hash..."
          /*CommitHash=
             returnStdout: true,
            script:'git rev-parse --verify --short HEAD'*/
+          }
       }
    stage("Build Image")
-   {
+   { 
+    steps{
      echo "Building docker image"
      docker -v       
      docker build -t aa     
-        
+    }   
     } 
    }
 }  
