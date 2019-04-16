@@ -7,8 +7,7 @@ def BranchName
 
 node
 {
- try{
-     stage(SCM Checkout)
+   stage(SCM Checkout)
      {
          echo "Checking out code"
          checkout scm
@@ -16,7 +15,6 @@ node
          CommitHash=
             returnStdout: true,
             script:'git rev-parse --verify --short HEAD'
-            
       }
       stage("Build Image")
       {
@@ -25,7 +23,7 @@ node
                  
       }   
      
-     }
+     
 }
 
 
