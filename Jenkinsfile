@@ -23,9 +23,11 @@ pipeline{
     steps{
      echo "Building docker image"
      //docker -v  
-         script{    
-              def app= docker.build "NewProj"   
-         }
+ 
+    sh "sudo docker build -t  testing ."
+ echo "its done"
+                
+         
     }  
     } 
    }
