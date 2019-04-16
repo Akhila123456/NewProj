@@ -1,3 +1,4 @@
+import hudson.model.*;
 GitCredentials='Gitcred'
 ExcludedGitTags=['Latest','Development','QA','Production']
 def CommitHash
