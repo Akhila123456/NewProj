@@ -4,9 +4,8 @@ ExcludedGitTags=['Latest','Development','QA','Production']
 def CommitHash
 def BranchName
 pipeline{
-     agent {
-          dockerfile true
-     }
+     agent any
+         // dockerfile true
      stages{
      stage("SCM Checkout")
      {
