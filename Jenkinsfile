@@ -26,7 +26,7 @@ stage("Build Image")
             
      echo "Building docker image"
             
-     docker build -t ${ImageTag} -f Dockerfile -t latest --label commit-hash=\"${CommitHash}\"
+     docker build  -< Dockerfile"
      
   }   
      
