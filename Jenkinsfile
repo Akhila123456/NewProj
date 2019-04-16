@@ -19,6 +19,7 @@ pipeline{
    {
      echo "Building docker image"
      docker -v       
-     docker build  -< Dockerfile
+     docker build -t aa     
+        
     }   
   }
