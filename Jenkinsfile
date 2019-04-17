@@ -4,8 +4,9 @@ ExcludedGitTags=['Latest','Development','QA','Production']
 def CommitHash
 def BranchName
 pipeline{
-     agent any
-         // dockerfile true
+     agent{
+         dockerfile true
+     }
      stages{
      stage("SCM Checkout")
      {
@@ -24,8 +25,8 @@ pipeline{
      echo "Building docker image"
      //docker -v  
  
-    sh "sudo docker build -t  testing ."
-    echo "its done"
+   // sh "sudo docker build -t  testing ."
+   // echo "its done"
                 
          
     }  
