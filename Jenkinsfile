@@ -5,7 +5,7 @@ def CommitHash
 def BranchName
 pipeline{
      agent{
-         dockerfile true
+         Dockerfile true
      }
      stages{
      stage("SCM Checkout")
