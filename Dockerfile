@@ -1,5 +1,5 @@
 # getting base image from Scratch
-FROM python
+FROM python:3.7-slim-stretch
 MAINTAINER Akhila<akhila.i@happiestminds.com>
 #ADD requirements.txt ./
 COPY addition.py ./
