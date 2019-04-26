@@ -11,4 +11,11 @@ pipeline {
         sh'docker build -t hh .'
         }
     }
+        stage('run image') 
+        
+        {
+            steps{
+        sh'docker run -it -d --name app hh'
+        }
+    }
     }}
