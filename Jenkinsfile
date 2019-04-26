@@ -3,14 +3,8 @@
 //ExcludedGitTags=['Latest','Development','QA','Production']
 pipeline {
     agent {
-        docker
-    
-    stages {
-        stage('Test') {
-            steps {
-                sh 'docker build -t image .'
-            }
-        }
+    docker {
+        sh 'docker build -t hai .'
     }
 }
 }
