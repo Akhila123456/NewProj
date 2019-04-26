@@ -1,9 +1,6 @@
-"""This is a simple program to add the two given numbers"""
+import logging
 
-first_value = int(10)
-
-second_value = int(5)
-
-addition = first_value + second_value
-
-print("\nSum of {} and {} is {}".format(first_value,second_value,addition))
+logger = logging.getLogger()
+logging.basicConfig(filename='log_file',format='%(asctime)s %(message)s',filemode='w')
+logger.setLevel(logging.INFO)
+logger.info("Hello from Docker Python Image..!")
