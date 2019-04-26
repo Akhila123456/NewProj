@@ -25,7 +25,7 @@ pipeline{
     steps{
      echo "Building docker image"
     // sh"docker -v"  
-     sh"docker build - < Dockerfile"
+     sh"docker build -t image1 .
      //sh"docker run"    
      echo "its done"
    }  
