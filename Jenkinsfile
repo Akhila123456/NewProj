@@ -26,7 +26,7 @@ pipeline{
      echo "Building docker image"
     // sh"docker -v"  
      sh"docker build - < Dockerfile"
-     sh"docker run"    
+     //sh"docker run"    
      echo "its done"
    }  
     } 
