@@ -5,7 +5,7 @@ def CommitHash
 def BranchName
 pipeline{
      agent{
-        label 'Dockerfile'
+        Dockerfile true
      }
      stages{
      stage("SCM Checkout")
@@ -23,13 +23,10 @@ pipeline{
    { 
     steps{
      echo "Building docker image"
-     //docker -v  
- 
-   // sh "sudo docker build -t  testing ."
-   // echo "its done"
-                
-         
-    }  
+     sh "docker -v"  
+     sh "sudo docker build -t  testing ."
+     echo "its done"
+   }  
     } 
    }
 }  
