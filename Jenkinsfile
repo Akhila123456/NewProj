@@ -2,9 +2,13 @@
 //GitCredentials='Gitcred'
 //ExcludedGitTags=['Latest','Development','QA','Production']
 pipeline {
-    agent {
-    docker {
-        sh 'docker build -t hai .'
+    agent any 
+    stages {
+        stage('build image') 
+        
+        {
+        sh ' docker build -t hh .
+        }
     }
 }
-}
+
