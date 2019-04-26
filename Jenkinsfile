@@ -15,7 +15,7 @@ pipeline {
         
         {
             steps{
-        sh'docker run -it -d --name app newproj'
+        sh'docker run -it -d --name newproj1 newproj'
         }
     }
     }}
