@@ -9,12 +9,7 @@ pipeline{
         dockerfile true
      }
      stages{
-          stage('Initialize')
-    {
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
-     stage("SCM Checkout")
+         stage("SCM Checkout")
      {
        steps{
          echo "Checking out code"
