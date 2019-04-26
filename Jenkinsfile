@@ -3,11 +3,17 @@
 //ExcludedGitTags=['Latest','Development','QA','Production']
 def CommitHash
 def BranchName
+
 pipeline{
      agent{
         dockerfile true
      }
      stages{
+          stage('Initialize')
+    {
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
      stage("SCM Checkout")
      {
        steps{
@@ -25,6 +31,7 @@ pipeline{
      echo "Building docker image"
     // sh"docker -v"  
      sh"docker build - < Dockerfile"
+     sh"docker run"    
      echo "its done"
    }  
     } 
