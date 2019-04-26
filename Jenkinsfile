@@ -24,7 +24,7 @@ pipeline{
     steps{
      echo "Building docker image"
      sh "docker -v"  
-     sh "sudo docker build -t  testing ."
+     sh "docker build -t  testing ."
      echo "its done"
    }  
     } 
