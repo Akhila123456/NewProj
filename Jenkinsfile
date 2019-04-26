@@ -8,14 +8,14 @@ pipeline {
         
         {
             steps{
-        sh'docker build -t myimage .'
+        sh'docker build -t newproj .'
         }
     }
         stage('run image') 
         
         {
             steps{
-        sh'docker run -it -d --name app myimage'
+        sh'docker run -it -d --name app newproj'
         }
     }
     }}
