@@ -17,10 +17,10 @@ pipeline {
                  sh'docker run -it -d --name newproj1234 newproj'
                  }
         }
-        /*stage('kubernetes Deploy')
+        stage('kubernetes Deploy')
         {
             steps{
                 kubernetesDeploy configs: '/home/administrator/.kube', kubeConfig: [path: ''], kubeconfigId: 'kubecon', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                  }
-        }*/
+        }
     }}
