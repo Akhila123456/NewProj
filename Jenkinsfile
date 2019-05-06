@@ -14,7 +14,7 @@ pipeline {
         stage('run image') 
         {
             steps{
-                 sh'docker run -it -d --name newproj1234 newproj1234'
+                 sh'docker run -it -d --name newproj1234 newproj'
                  }
         }
         /*stage('kubernetes Deploy')
