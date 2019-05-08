@@ -20,7 +20,7 @@ pipeline {
         stage('kubernetes Deploy')
         {
             steps{
-                kubernetesDeploy configs: '', dockerCredentials: [[credentialsId: 'dock_hub', url: 'https://cloud.docker.com/repository/docker/tripathiakhila/newproj2']], kubeConfig: [path: ''], kubeconfigId: 'kubecon', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+                kubernetesDeploy configs: '/home/administrator/.minikube/config', kubeConfig: [path: ''], kubeconfigId: 'kubecon', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                  }
         }
     }}
