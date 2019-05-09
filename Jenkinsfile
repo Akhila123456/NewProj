@@ -45,7 +45,7 @@ pipeline {
         {
            steps{
                //  kubernetesDeploy configs: '<path id="absolute.path.id">     <fileset dir="/home/administrator/.kube">         <include name="config"/>     </fileset> </path> <property name="absolute.path" value="${toString:absolute.path.id}" /> <echo>file absolute path: ${absolute.path}</echo>', dockerCredentials: [[credentialsId: 'dock_hub', url: 'https://cloud.docker.com/repository/docker/tripathiakhila/newproj2']], kubeConfig: [path: ''], kubeconfigId: 'kubecon', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
-               kubectl --kubeconfig=/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development      
+               kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
                 }
         }
     }
