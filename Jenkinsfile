@@ -22,9 +22,9 @@ pipeline {
        
             
         stage('push image')
-        {   when {
-                  branch 'master'
-                 }
+        {  // when {
+             //     branch 'master'
+               //  }
             
             steps{
               //docker.withRegistry('git_cred','https://cloud.docker.com/repository/docker/tripathiakhila/newproj2') 
