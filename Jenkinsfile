@@ -8,7 +8,8 @@ pipeline {
         stage('build image') 
         {
           steps{
-          sh'docker build -t newproj .'
+                sh'docker build -t newproj .'
+              
                }
         }
         stage('run image') 
@@ -26,10 +27,10 @@ pipeline {
                  }
             
             steps{
-              docker.withRegistry('git_cred','https://cloud.docker.com/repository/docker/tripathiakhila/newproj2') 
-                {
+              //docker.withRegistry('git_cred','https://cloud.docker.com/repository/docker/tripathiakhila/newproj2') 
+                //{
                sh 'docker push newproj:latest'
-                 }
+                 //}
             }
         }
        //stage('kubernetes Deploy')
