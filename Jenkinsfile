@@ -12,13 +12,13 @@ pipeline {
               
                }
         }
-        stage('run image') 
+        /*stage('run image') 
         {
             steps{
                  sh'docker run -it -d --name newproj12a5 newproj'
                 
                  }
-        }
+        }*/
        
             
         stage('push image')
@@ -36,7 +36,7 @@ pipeline {
                 script{
               docker.withRegistry("",'dock_hub') 
                 {
-                 sh 'docker push newproj:latest'
+                 sh 'docker push tripathiakhila/newproj2:latest'
                 }
             }
         }
