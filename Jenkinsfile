@@ -2,7 +2,7 @@
 //GitCredentials='Gitcred'
 //ExcludedGitTags=['Latest','Development','QA','Production']
 pipeline {
-    def app;
+    //def app;
     agent any 
     stages {
         stage('build image') 
@@ -26,9 +26,11 @@ pipeline {
                  }
             
             steps{
-              docker.withRegistry('git_cred','https://cloud.docker.com/repository/docker/tripathiakhila/newproj2')  
+              docker.withRegistry('git_cred','https://cloud.docker.com/repository/docker/tripathiakhila/newproj2') 
+                {
                sh 'docker push newproj:latest'
                  }
+            }
         }
        //stage('kubernetes Deploy')
         //{
