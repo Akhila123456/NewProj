@@ -8,13 +8,13 @@ pipeline {
         
         {
             steps{
-        sh'sudo docker build -t newproj .'
+        sh'docker build -t newproj .'
         }
     }
         stage('run image') 
         {
             steps{
-                 sh'sudo docker run -it -d --name newproj12 newproj'
+                 sh'docker run -it -d --name newproj12 newproj'
                  }
         }
         stage('kubernetes Deploy')
