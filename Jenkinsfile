@@ -15,7 +15,7 @@ pipeline {
         stage('run image') 
         {
             steps{
-                 sh'docker run -it -d --name newproj12a1 newproj'
+                 sh'docker run -it -d --name newproj12a2 newproj'
                 
                  }
         }
@@ -27,7 +27,7 @@ pipeline {
                //  }
             
             steps{
-              docker.withRegistry([ credentialsId: "dock_hub", url: "https://cloud.docker.com/repository/docker/tripathiakhila/newproj2" ]) 
+              docker.withRegistry([ credentialsId: "dock_hub", url: "" ]) 
                 {
                sh 'docker push newproj:latest'
                 }
