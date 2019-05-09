@@ -34,7 +34,7 @@ pipeline {
         }*/
             steps{
                 script{
-              docker.withRegistry("https://cloud.docker.com/repository/docker/tripathiakhila/newproj2",'dock_hub') 
+              docker.withRegistry("",'dock_hub') 
                 {
                  sh 'docker push newproj:latest'
                 }
