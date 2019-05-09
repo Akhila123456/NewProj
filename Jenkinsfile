@@ -31,8 +31,9 @@ pipeline {
             // we give the image the same version as the .war package
                 def image = docker.build("<myDockerRegistry>/<myDockerProjectRepo>:${branchVersion}", "--build-arg PACKAGE_VERSION=${branchVersion} ./tmp-docker-build-context")
                 image.push()
-        }*/script{
+        }*/
             steps{
+                script{
               docker.withRegistry("https://cloud.docker.com/repository/docker/tripathiakhila/newproj2",'dock_hub') 
                 {
                  sh 'docker push newproj:latest'
