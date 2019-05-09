@@ -8,7 +8,7 @@ pipeline {
         stage('build image') 
         {
           steps{
-                sh'docker build -t newproj2 .'
+                sh'docker build -t tripathiakhila/newproj3:latest .'
               
                }
         }
@@ -36,7 +36,7 @@ pipeline {
                 script{
               docker.withRegistry("",'dock_hub') 
                 {
-                 sh 'docker push newproj2:latest'
+                 sh 'docker push tripathiakhila/newproj3:latest'
                 }
             }
         }
