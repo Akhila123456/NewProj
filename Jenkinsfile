@@ -15,7 +15,7 @@ pipeline {
         stage('run image') 
         {
             steps{
-                 sh'docker run -it -d --name newproj12a3 newproj'
+                 sh'docker run -it -d --name newproj12a4 newproj'
                 
                  }
         }
