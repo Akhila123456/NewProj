@@ -21,17 +21,17 @@ pipeline {
         }*/
        
             
-        stage('push image')
+        /*stage('push image')
         {  // when {
              //     branch 'master'
                //  }
-           /* script {
+            script {
                  //withDockerServer([uri: "tcp://<my-docker-socket>"]) {
                  withDockerRegistry([credentialsId: 'dock_hub', url: ""]) {
             // we give the image the same version as the .war package
                 def image = docker.build("<myDockerRegistry>/<myDockerProjectRepo>:${branchVersion}", "--build-arg PACKAGE_VERSION=${branchVersion} ./tmp-docker-build-context")
                 image.push()
-        }*/
+        }
             steps{
                 script{
               docker.withRegistry("",'dock_hub') 
@@ -40,7 +40,7 @@ pipeline {
                 }
             }
         }
-        }
+        }*/
        stage('kubernetes Deploy')
         {
            steps{
