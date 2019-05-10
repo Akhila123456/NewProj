@@ -16,5 +16,3 @@ metadata:
        - name: myimage
          image: https://cloud.docker.com/repository/docker/tripathiakhila/newproj2
          imagePullPolicy: Always
-         
-         
