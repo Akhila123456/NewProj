@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment 
 metadata:
-   name: pythondeployment
+   name: pythondeployment1
 spec:
    replicas: 1
    selector:
      matchLabels:
-       app: pythonfile
+       app: pythonfile1
    template:
      metadata:
        labels:
-         app: pythonfile
+         app: pythonfile1
      spec:
        containers:
        - name: kubecon4
