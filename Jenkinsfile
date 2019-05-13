@@ -12,13 +12,13 @@ pipeline {
               
                }
         }
-        stage('run image') 
+        /*stage('run image') 
         {
             steps{
                  sh'docker run -it -d --name kubecon1 kubeim'
                 
                  }
-        }
+        }*/
        
             
         stage('push image')
