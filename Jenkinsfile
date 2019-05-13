@@ -21,7 +21,7 @@ pipeline {
         }
        
             
-        stage('push image')
+        /*stage('push image')
         {  // when {
              //     branch 'master'
                //  }
@@ -40,7 +40,7 @@ pipeline {
                 }
             }
         }
-        }
+        }*/
        stage('kubernetes Deploy')
         {
            steps{
