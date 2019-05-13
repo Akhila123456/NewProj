@@ -15,7 +15,7 @@ pipeline {
         stage('run image') 
         {
             steps{
-                 sh'docker run -it -d --name kubecon2 kubeim'
+                 sh'docker run -it -d --name kubecon3 kubeim'
                 
                  }
         }
