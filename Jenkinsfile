@@ -8,7 +8,7 @@ pipeline {
         stage('build image') 
         {
           steps{
-                sh'docker build -t tripathiakhila/newproj3:latest .'
+                sh'docker build -t kubeim tripathiakhila/newproj3:latest .'
               
                }
         }
