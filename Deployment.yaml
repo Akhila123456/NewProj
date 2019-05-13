@@ -14,5 +14,5 @@ spec:
      spec:
        containers:
        - name: kubecon4
-         image: https://cloud.docker.com/repository/docker/tripathiakhila/kubeim
+         image: tripathiakhila/kubeim
          imagePullPolicy: Always
