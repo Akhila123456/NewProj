@@ -36,7 +36,7 @@ pipeline {
                 script{
               docker.withRegistry("",'dock_hub') 
                 {
-                 sh 'docker push kubeim:latest'
+                 sh 'docker push tripathiakhila/newproj2:latest'
                 }
             }
         }
