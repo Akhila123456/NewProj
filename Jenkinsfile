@@ -12,13 +12,13 @@ pipeline {
               
                }
         }
-        stage('run image') 
+       /* stage('run image') 
         {
             steps{
                  sh'docker run -it -d --name kubecon4 tripathiakhila/kubeim'
                 
                  }
-        }
+        }*/
        
             
         /*stage('push image')
