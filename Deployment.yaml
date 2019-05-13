@@ -16,3 +16,4 @@ spec:
        - name: kubecon4
          image: tripathiakhila/kubeim:latest
          imagePullPolicy: Always
+         tty: true
