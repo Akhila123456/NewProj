@@ -8,14 +8,14 @@ pipeline {
         stage('build image') 
         {
           steps{
-                sh'docker build -t kubeim:latest .'
+                sh'docker build -t tripathiakhila/kubeim:latest .'
               
                }
         }
         stage('run image') 
         {
             steps{
-                 sh'docker run -it -d --name kubecon3 kubeim'
+                 sh'docker run -it -d --name kubecon3 tripathiakhila/kubeim'
                 
                  }
         }
