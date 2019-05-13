@@ -12,35 +12,35 @@ pipeline {
               
                }
         }
-        /*stage('run image') 
+        stage('run image') 
         {
             steps{
-                 sh'docker run -it -d --name newproj12a5 newproj'
+                 sh'docker run -it -d --name kubecon kubeim'
                 
                  }
-        }*/
+        }
        
             
-        /*stage('push image')
+        stage('push image')
         {  // when {
              //     branch 'master'
                //  }
-            script {
+           // script {
                  //withDockerServer([uri: "tcp://<my-docker-socket>"]) {
-                 withDockerRegistry([credentialsId: 'dock_hub', url: ""]) {
+                // withDockerRegistry([credentialsId: 'dock_hub', url: ""]) {
             // we give the image the same version as the .war package
-                def image = docker.build("<myDockerRegistry>/<myDockerProjectRepo>:${branchVersion}", "--build-arg PACKAGE_VERSION=${branchVersion} ./tmp-docker-build-context")
-                image.push()
-        }
+               // def image = docker.build("<myDockerRegistry>/<myDockerProjectRepo>:${branchVersion}", "--build-arg PACKAGE_VERSION=${branchVersion} ./tmp-docker-build-context")
+              //  image.push()
+        //}
             steps{
                 script{
               docker.withRegistry("",'dock_hub') 
                 {
-                 sh 'docker push tripathiakhila/newproj3:latest'
+                 sh 'docker push kubeim:latest'
                 }
             }
         }
-        }*/
+        }
        stage('kubernetes Deploy')
         {
            steps{
