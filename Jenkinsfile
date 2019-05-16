@@ -1,16 +1,44 @@
 //import hudson.model.*;
 //GitCredentials='Gitcred'
 //ExcludedGitTags=['Latest','Development','QA','Production']
+def kubectlTest() {
+    // Test that kubectl can correctly communication with the Kubernetes API
+    echo "running kubectl test"
+    sh "kubectl get nodes"
+
+}
+def helmDeploy(Map args) {
+    //configure helm client and confirm tiller process is installed
+
+    if (args.dry_run) {
+        println "Running dry-run deployment"
+
+        sh "/usr/local/bin/helm upgrade --dry-run --debug --install ${args.name} ${args.chart_dir} --set ImageTag=${args.tag},Replicas=${args.replicas},Cpu=${args.cpu},Memory=${args.memory},DomainName=${args.name} --namespace=${args.name}"
+    } else {
+        println "Running deployment"
+        sh "/usr/local/bin/helm upgrade --install ${args.name} ${args.chart_dir} --set ImageTag=${args.tag},Replicas=${args.replicas},Cpu=${args.cpu},Memory=${args.memory},DomainName=${args.name} --namespace=${args.name}"
+
+        echo "Application ${args.name} successfully deployed. Use helm status ${args.name} to check"
+    }
+}
+
+
 pipeline {
     //def app;
+     registry_url = "https://cloud.docker.com/repository/docker/tripathiakhila/kubeim" // Docker Hub
+    docker_creds_id = "dock_hub" // name of the Jenkins Credentials ID
+    build_tag = "latest"
     agent any 
     stages {
         stage('build image') 
         {
           steps{
                 sh'docker build -t tripathiakhila/kubeim:latest .'
-              
-               }
+              }
+            script{
+                    def pwd= pwd()
+                    def chart_dir = "${pwd}/charts/newegg-nginx"            
+            }  
         }
        /* stage('run image') 
         {
