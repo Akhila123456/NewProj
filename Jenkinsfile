@@ -1,6 +1,7 @@
 //import hudson.model.*;
 //GitCredentials='Gitcred'
 //ExcludedGitTags=['Latest','Development','QA','Production']
+script{
 def kubectlTest() {
     // Test that kubectl can correctly communication with the Kubernetes API
     echo "running kubectl test"
@@ -21,7 +22,7 @@ def helmDeploy(Map args) {
         echo "Application ${args.name} successfully deployed. Use helm status ${args.name} to check"
     }
 }
-
+}
 
 pipeline {
     //def app;
@@ -36,8 +37,7 @@ pipeline {
                 sh'docker build -t tripathiakhila/kubeim:latest .'
               }
             script{
-                    def pwd= pwd()
-                    def chart_dir = "${pwd}/charts/newegg-nginx"            
+                   def chart_dir = "https://github.com/Akhila123456/NewProj/tree/master/Helm"            
             }  
         }
        /* stage('run image') 
@@ -69,6 +69,26 @@ pipeline {
             }
         }
         }*/
+        stage('Helm test')
+        {
+            // run helm chart linter
+            helmLint(chart_dir)
+
+        }
+         stage ('helm deploy')
+        {
+      
+      // Deploy using Helm chart
+      helmDeploy(
+        dry_run       : false,
+        name          : config.app.name,
+        chart_dir     : chart_dir,
+        tag           : build_tag,
+        replicas      : config.app.replicas,
+        cpu           : config.app.cpu,
+        memory        : config.app.memory
+      )
+
        stage('kubernetes Deploy')
         {
            steps{
