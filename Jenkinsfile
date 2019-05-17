@@ -21,7 +21,12 @@
     }
 }
 */
-//def chart_dir = "https://github.com/Akhila123456/NewProj/tree/master/Helm"     
+/*def chart_dir = "https://github.com/Akhila123456/NewProj/tree/master/Helm"     
+def helmLint(String chart_dir) {
+    // lint helm chart
+    sh "/usr/local/bin/helm lint ${chart_dir}"
+
+}*/
 pipeline {
     
     environment{
@@ -72,9 +77,10 @@ pipeline {
         }*/
         stage('Helm test')
         {   steps
-         {
+         { 
+             sh "/usr/local/bin/helm lint https://github.com/Akhila123456/NewProj/tree/master/Helm"
            // run helm chart linter
-            helmLint("https://github.com/Akhila123456/NewProj/tree/master/Helm")
+           // helmLint("chart_dir")
          }
         }
         stage('Deploy to dev') {
