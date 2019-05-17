@@ -6,21 +6,22 @@
     echo "Creating namespace ${namespace} if needed"
     sh "[ ! -z \"\$(kubectl get ns ${namespace} -o name 2>/dev/null)\" ] || kubectl create ns ${namespace}"
     }*/
-/*def helmInstall (namespace, ID) {
+def helmInstall (namespace, ID) {
     echo "Installing ${ID} in ${namespace}"
 
     script {
-        release = "${release}-${namespace}"
-        sh "helm repo add helm ${HELM_REPO}; helm repo update"
-        sh """
+       // release = "${release}-${namespace}"
+        sh "helm repo add helm https://github.com/Akhila123456/NewProj/tree/master/Helm ; helm repo update"
+        sh  "helm install helm/newproj"
+       /* sh """
             helm upgrade --install --namespace ${namespace} ${release} \
                 --set imagePullSecrets=${IMG_PULL_SECRET} \
                 --set image.repository=${DOCKER_REG}/${IMAGE_NAME},image.tag=${DOCKER_TAG} helm/acme
-        """
-        sh "sleep 5"
+        """*/
+        //sh "sleep 5"
     }
 }
-*/
+
 /*def chart_dir = "https://github.com/Akhila123456/NewProj/tree/master/Helm"     
 def helmLint(String chart_dir) {
     // lint helm chart
