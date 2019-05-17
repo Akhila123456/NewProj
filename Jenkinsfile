@@ -10,6 +10,7 @@ def helmInstall (namespace, ID) {
     echo "Installing ${ID} in ${namespace}"
 
     script {
+        sh "kubectl get nodes"
         sh "helm version"
         sh "helm init"
         
