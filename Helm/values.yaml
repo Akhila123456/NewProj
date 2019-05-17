@@ -4,10 +4,10 @@
 
 replicaCount: 1
 
-image:
-  repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
+ repository: tripathiakhila/kubeim
+  tag: latest
+  pullPolicy: Always
+  tty: true
 
 nameOverride: ""
 fullnameOverride: ""
