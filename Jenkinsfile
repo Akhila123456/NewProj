@@ -21,7 +21,7 @@
     }
 }
 */
-
+//def chart_dir = "https://github.com/Akhila123456/NewProj/tree/master/Helm"     
 pipeline {
     
     environment{
@@ -73,12 +73,8 @@ pipeline {
         stage('Helm test')
         {   steps
          {
-              script{
-                   def chart_dir = "https://github.com/Akhila123456/NewProj/tree/master/Helm"            
-                  }  
-        
-            // run helm chart linter
-            helmLint(chart_dir)
+           // run helm chart linter
+            helmLint("https://github.com/Akhila123456/NewProj/tree/master/Helm")
          }
         }
         stage('Deploy to dev') {
