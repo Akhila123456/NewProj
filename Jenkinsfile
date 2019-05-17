@@ -10,8 +10,9 @@ def helmInstall (namespace, ID) {
     echo "Installing ${ID} in ${namespace}"
 
     script {
+        sh "helm version"
         sh "helm init"
-        //sh ""
+        
        // release = "${release}-${namespace}"
         sh "helm repo add helm https://github.com/Akhila123456/NewProj/tree/master/Helm ; helm repo update"
         sh  "helm install helm/newproj"
