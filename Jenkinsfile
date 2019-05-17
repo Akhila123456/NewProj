@@ -78,7 +78,7 @@ pipeline {
         stage('Helm test')
         {   steps
          { 
-             sh "/usr/local/bin/helm lint https://github.com/Akhila123456/NewProj/tree/master/Helm"
+             //sh "/usr/local/bin/helm lint https://github.com/Akhila123456/NewProj/tree/master/Helm"
            // run helm chart linter
            // helmLint("chart_dir")
          }
