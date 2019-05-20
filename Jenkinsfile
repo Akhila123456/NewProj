@@ -116,6 +116,7 @@ pipeline {
                  //kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
                sh "sudo helm init"
                sh "helm init"
+               echo "helm"
                sh "kubectl version" 
                sh "kubectl get pods"
                  
