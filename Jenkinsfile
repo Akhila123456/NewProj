@@ -110,9 +110,9 @@ pipeline {
         {
            steps{
                  echo "running kubectl test"
-                 kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: '/home/administrator/.kube'], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+                // kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: '/home/administrator/.kube'], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                  echo "Deployment finished" 
-              // kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+              kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                  //kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
                /*data "helm_repository" "Helm" {
                                    name = "Helm"
@@ -120,8 +120,9 @@ pipeline {
                                                    }*/
                //sh "sudo helm init"
                //sh "helm init"
-               withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://192.168.99.101:8443']) {
-                                sh 'kubectl apply -f my-kubernetes-directory'
+               withKubeConfig([credentialsId: 'kube_con', serverUrl: 'https://192.168.99.101:8443']) {
+                                sh "kubectl version" 
+                                sh "kubectl get pods"
                                  }
                echo "helm"
                sh "kubectl version" 
