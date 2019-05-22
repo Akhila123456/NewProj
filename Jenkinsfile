@@ -118,8 +118,8 @@ pipeline {
                                    name = "Helm"
                                    url  = "https://github.com/Akhila123456/NewProj/tree/master/Helm"
                                                    }*/
-               sh "sudo helm init"
-               sh "helm init"
+               //sh "sudo helm init"
+               //sh "helm init"
                echo "helm"
                sh "kubectl version" 
                sh "kubectl get pods"
