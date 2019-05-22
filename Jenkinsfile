@@ -120,7 +120,7 @@ pipeline {
                                                    }*/
                //sh "sudo helm init"
                //sh "helm init"
-               withKubeConfig([credentialsId: 'kube_con', serverUrl: 'https://192.168.99.101:8443']) {
+               withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://192.168.99.101:8443']) {
                                 sh "kubectl version" 
                                 sh "kubectl get pods"
                                  }
