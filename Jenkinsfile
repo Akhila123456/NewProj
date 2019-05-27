@@ -54,7 +54,7 @@ pipeline {
         stage('run image') 
         {
             steps{
-                 sh'docker run -it -d --name kubecon4 tripathiakhila/kubeim'
+                 sh'docker run -it -d --name kubecon5 tripathiakhila/kubeim'
                  }
         }
        
