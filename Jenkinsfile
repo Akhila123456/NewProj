@@ -23,7 +23,7 @@
                 --set image.repository=${DOCKER_REG}/${IMAGE_NAME},image.tag=${DOCKER_TAG} helm/acme
         """
         //sh "sleep 5"
-}
+           }
 }*/
 
 /*def chart_dir = "https://github.com/Akhila123456/NewProj/tree/master/Helm"     
@@ -36,7 +36,7 @@ pipeline {
     
     environment{
      registry_url = "https://cloud.docker.com/repository/docker/tripathiakhila/kubeim" // Docker Hub
-     docker_creds_id = "dock_hub" // name of the Jenkins Credentials ID
+     docker_creds_id = "dock_hub" // Name of the Jenkins Credentials ID
      build_tag = "latest"
     }
      parameters {
@@ -51,16 +51,15 @@ pipeline {
                 sh'docker build -t tripathiakhila/kubeim:latest .'
                }
         } 
-       /* stage('run image') 
+        stage('run image') 
         {
             steps{
                  sh'docker run -it -d --name kubecon4 tripathiakhila/kubeim'
-                
                  }
-        }*/
+        }
        
             
-        /*stage('push image')
+        stage('push image')
         {  // when {
              //     branch 'master'
                //  }
@@ -79,7 +78,7 @@ pipeline {
                 }
             }
         }
-        }*/
+        }
         /*stage('Helm test')
         {   steps
          { 
@@ -120,13 +119,13 @@ pipeline {
                                                    }*/
                //sh "sudo helm init"
                //sh "helm init"
-               withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://192.168.99.101:8443']) {
+               /*withKubeConfig([credentialsId: 'kubeconfig', serverUrl: 'https://192.168.99.101:8443']) {
                                 sh "kubectl version" 
                                 sh "kubectl get pods"
                                  }
                echo "helm"
                sh "kubectl version" 
-               sh "kubectl get pods"
+               sh "kubectl get pods"*/
                  
            }
         }
