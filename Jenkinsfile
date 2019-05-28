@@ -51,12 +51,12 @@ pipeline {
                 sh'docker build -t tripathiakhila/kubeim:latest .'
                }
         } 
-        stage('run image') 
+        /*stage('run image') 
         {
             steps{
                  sh'docker run -it -d --name kubecon6 tripathiakhila/kubeim'
                  }
-        }
+        }*/
        
             
         stage('push image')
