@@ -59,7 +59,7 @@ pipeline {
         }*/
        
             
-        stage('push image')
+        /*stage('push image')
         {  // when {
              //     branch 'master'
                //  }
@@ -78,7 +78,7 @@ pipeline {
                 }
             }
         }
-        }
+        }*/
         /*stage('Helm test')
         {   steps
          { 
@@ -111,7 +111,7 @@ pipeline {
                  echo "running kubectl test"
                 // kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: '/home/administrator/.kube'], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                  echo "Deployment finished" 
-              kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+              //kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                 // emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider']], subject: 'Test' 
              
                //kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
