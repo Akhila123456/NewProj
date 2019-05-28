@@ -112,7 +112,8 @@ pipeline {
                 // kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: '/home/administrator/.kube'], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                  echo "Deployment finished" 
               kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
-                 //kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
+                emailext body: '', subject: '', to: 'akhilatripathi19@gmail.com' 
+               //kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
                /*data "helm_repository" "Helm" {
                                    name = "Helm"
                                    url  = "https://github.com/Akhila123456/NewProj/tree/master/Helm"
