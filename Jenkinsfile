@@ -113,7 +113,7 @@ pipeline {
                  echo "Deployment finished" 
               kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                 // emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider']], subject: 'Test' 
-                 emailext body: '', recipientProviders: [developers()], subject: '', to: 'akhilatripathi19@gmail.com'
+             
                //kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
                /*data "helm_repository" "Helm" {
                                    name = "Helm"
@@ -130,6 +130,11 @@ pipeline {
                sh "kubectl get pods"*/
                  
            }
+        }
+    }
+    post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
         }
     }
 }
