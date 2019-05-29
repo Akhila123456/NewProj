@@ -1,3 +1,4 @@
+import hudson.util.Secret
 //GitCredentials='Gitcred'
 //ExcludedGitTags=['Latest','Development','QA','Production']
     /* def createNamespace (namespace)
@@ -111,9 +112,6 @@ pipeline {
                  echo "running kubectl test"
                 // kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: '/home/administrator/.kube'], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                  echo "Deployment finished" 
-              //kubernetesDeploy configs: '**/Deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kube_con', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
-                // emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider']], subject: 'Test' 
-             
                //kubectl --kubeconfig=("/home/administrator/.kube get ns development || kubectl --kubeconfig=/home/administrator/.kube  create ns development")      
                /*data "helm_repository" "Helm" {
                                    name = "Helm"
@@ -128,7 +126,8 @@ pipeline {
                echo "helm"
                sh "kubectl version" 
                sh "kubectl get pods"*/
-                 
+               def secret = Secret.fromString("your password")
+               println(secret.getEncryptedValue()) 
            }
         }
     }
