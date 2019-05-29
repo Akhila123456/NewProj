@@ -46,12 +46,12 @@ pipeline {
                 }
     agent any 
     stages {
-        stage('build image') 
+        /*stage('build image') 
         {
           steps{
                 sh'docker build -t tripathiakhila/kubeim:latest .'
                }
-        } 
+        } */
         /*stage('run image') 
         {
             steps{
