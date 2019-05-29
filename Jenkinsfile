@@ -33,6 +33,8 @@ def helmLint(String chart_dir) {
     sh "/usr/local/bin/helm lint ${chart_dir}"
 
 }*/
+               def secret = Secret.fromString("your password")
+               println(secret.getEncryptedValue())
 pipeline {
     
     environment{
@@ -126,8 +128,7 @@ pipeline {
                echo "helm"
                sh "kubectl version" 
                sh "kubectl get pods"*/
-               def secret = Secret.fromString("your password")
-               println(secret.getEncryptedValue()) 
+                
            }
         }
     }
